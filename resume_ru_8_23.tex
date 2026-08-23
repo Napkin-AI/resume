@@ -1,0 +1,153 @@
+% Adapted from Jake's Resume (MIT License)
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{cmap}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{microtype}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.62in}
+\addtolength{\evensidemargin}{-0.62in}
+\addtolength{\textwidth}{1.24in}
+\addtolength{\topmargin}{-0.66in}
+\addtolength{\textheight}{1.30in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\setlength{\parindent}{0pt}
+
+\titleformat{\section}{\vspace{-3pt}\raggedright\large}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-1pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}\item
+  \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4} \\
+  \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeSubSubheading}[2]{
+  \item
+  \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small #1} & \textit{\small #2} \\
+  \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.98\textwidth}{l@{\extracolsep{\fill}}r}
+    \small #1 & \small #2 \\
+  \end{tabular*}\vspace{-6pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.14in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.22in,itemsep=1pt,topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\hypersetup{
+  pdftitle={Арсений Миронов - Резюме},
+  pdfauthor={Арсений Миронов},
+  pdfsubject={Резюме Machine Learning и LLM Inference Engineer}
+}
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge Арсений Миронов} \\ \vspace{2pt}
+  \small Нижний Новгород, Россия $|$ +7 (917) 618-94-15 $|$
+  \href{mailto:arseniy.mironov.dev@gmail.com}{\underline{arseniy.mironov.dev@gmail.com}} \\
+  \href{https://github.com/Napkin-AI}{\underline{github.com/Napkin-AI}} $|$
+  \href{https://t.me/xNapkin}{\underline{t.me/xNapkin}}
+\end{center}
+
+\section{Образование}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {ННГУ им. Н. И. Лобачевского}{Нижний Новгород, Россия}
+    {Магистратура. Прикладная математика и информатика}{2026 -- н. в.}
+  \resumeSubSubheading
+    {Бакалавриат. Фундаментальная информатика и информационные технологии}{2022 --- 2026}
+  \resumeSubheading
+    {Школа анализа данных Яндекса}{ }
+    {Направление Data Science}{2 курс}
+\resumeSubHeadingListEnd
+
+\section{Опыт работы}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Инженер}{Янв. 2026 -- н. в.}
+    {Huawei}{Нижний Новгород, Россия}
+  \resumeItemListStart
+    \resumeItem{Развиваю стек инференса SGLang для Ascend NPU с фокусом на инференс LLM и diffusion-моделей, attention backends и оптимизацию производительности.}
+    \resumeItem{Интегрировал sparse attention backends в SGLang Diffusion для Ascend NPU, включая конфигурацию backend'ов, проверку точности, документацию и профилирование производительности; изменение принято в \href{https://github.com/sgl-project/sglang/pull/23482}{\underline{Pull Request \#23482}}.}
+    \resumeItem{Исследовал ускорение prefill для Qwen3 и diffusion-LLM, а также узкие места инференса на Ascend NPU.}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Инженер-стажёр}{Июль 2025 -- Авг. 2025}
+    {Huawei}{Нижний Новгород, Россия}
+  \resumeItemListStart
+    \resumeItem{Исследовал раздельный запуск этапов prefill и decode в vLLM на аппаратных ускорителях.}
+    \resumeItem{Адаптировал KV-cache transfer engine под архитектуру целевого ускорителя и провёл бенчмарки производительности LLM при disaggregated serving.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Open Source и проекты}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{OpenCV --- оптимизация детектирования QR и ArUco} $|$ \emph{C++}}{}
+  \resumeItemListStart
+    \resumeItem{Реализовал \texttt{cv::approxPolyN} --- алгоритм жадной аппроксимации контура выпуклым многоугольником с настраиваемым числом сторон и порогом ошибки по площади.}
+    \resumeItem{Реализация \href{https://github.com/opencv/opencv/pull/25607}{\underline{Pull Request \#25607}} вошла в OpenCV 4.11.0.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Публикации}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{А. И. Миронов}, Н. А. Соколов, А. А. Серебрякова}{2025}
+  \resumeItemListStart
+    \resumeItem{«Влияние объема синтетически сгенерированных изображений в наборе данных для задачи сегментации аксонов в электронной микроскопии мозга». \textit{GraphiCon 2025}. \href{https://doi.org/10.25686/978-5-8158-2474-4-2025-828-834}{\underline{DOI}}}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Спортивное программирование}
+\resumeSubHeadingListStart
+  \resumeProjectHeading{\textbf{ICPC 2025--2026}}{}
+  \resumeItemListStart
+    \resumeItem{Квалификация в Нижнем Новгороде: диплом 2 степени; четвертьфинал в Саратове: диплом 3 степени; полуфинал ICPC, финал NERC в Санкт-Петербурге: диплом 3 степени.}
+  \resumeItemListEnd
+  \resumeProjectHeading{\textbf{ICPC 2024--2025}}{}
+  \resumeItemListStart
+    \resumeItem{Квалификация в Нижнем Новгороде: диплом 2 степени; четвертьфинал в Саратове: 59 место.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Технические навыки}
+\begin{itemize}[leftmargin=0.14in,label={}]
+  \small{\item{
+    \textbf{Языки:} Python, C++, SQL, Triton \\
+    \textbf{ML / Inference:} PyTorch, SGLang, vLLM, OpenCV, NumPy, pandas, scikit-learn, Matplotlib \\
+    \textbf{Системы / инструменты:} Linux, Git, Jupyter, LaTeX \\
+    \textbf{Английский:} B1
+  }}
+\end{itemize}
+
+\end{document}
