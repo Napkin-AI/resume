@@ -8,11 +8,11 @@ The resume is written in **LaTeX** and is based on [Jake's Resume](https://www.o
 
 ```text
 .
-├── resume_en.tex        # English LaTeX source
-├── resume_en.pdf        # English resume
-├── resume_ru.tex        # Russian LaTeX source
-├── resume_ru.pdf        # Russian resume
-└── README.md            # This file
+├── resume_mironov_arseniy_en.tex        # English LaTeX source
+├── resume_mironov_arseniy_en.pdf        # English resume
+├── resume_mironov_arseniy_ru.tex        # Russian LaTeX source
+├── resume_mironov_arseniy_ru.pdf        # Russian resume
+└── README.md                            # This file
 
 ```
 
@@ -23,13 +23,13 @@ The project can be built directly from VS Code using the [LaTeX Workshop](https:
 Using `latexmk`:
 
 ```bash
-latexmk -pdf -outdir=. -auxdir=build resume_en.tex
-latexmk -pdf -outdir=. -auxdir=build resume_ru.tex
+latexmk -pdf -outdir=. -auxdir=build resume_mironov_arseniy_en.tex
+latexmk -pdf -outdir=. -auxdir=build resume_mironov_arseniy_ru.tex
 ```
 
 Or using `pdflatex` directly:
 
 ```bash
-pdflatex -interaction=nonstopmode -halt-on-error resume_en.tex
-pdflatex -interaction=nonstopmode -halt-on-error resume_ru.tex
+pdflatex -interaction=nonstopmode -halt-on-error resume_mironov_arseniy_en.tex
+pdflatex -interaction=nonstopmode -halt-on-error resume_mironov_arseniy_ru.tex
 ```
